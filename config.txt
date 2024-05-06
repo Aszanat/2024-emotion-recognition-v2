@@ -1,1 +1,1 @@
---metric CustomMetric%FinalF1 --metric CustomMetric%TextF1 --metric CustomMetric%SentenceF1
+--metric PolevalFinalF1:P<1>N<FinalF1> --metric PolevalTextF1:P<2>N<TextF1> --metric PolevalSentenceF1:P<2>N<SentenceF1> --in-header in-header.tsv --out-header out-header.tsv --precision 4 -%
