@@ -1,1 +1,1 @@
---metric PolevalFinalF1:P<1>N<FinalF1> --metric PolevalTextF1:P<2>N<TextF1> --metric PolevalSentenceF1:P<2>N<SentenceF1> --in-header in-header.tsv --out-header out-header.tsv --precision 4 -%
+--metric PolevalFinalF1 --metric PolevalTextF1 --metric PolevalSentenceF1 --in-header in-header.tsv --out-header out-header.tsv --precision 4 -%
