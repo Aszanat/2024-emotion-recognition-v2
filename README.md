@@ -85,9 +85,9 @@ True	True	False	False	False	False	False	False	True	False	False
 
 ## References
 <span id="ref-1">1. Koptyra, Bartłomiej, et al. "CLARIN-Emo: Training Emotion Recognition Models Using Human Annotation and ChatGPT." International Conference on Computational Science. Cham: Springer Nature Switzerland, 2023.</span>
+<span id="ref-2">2. Kocoń, Jan, et al. "ChatGPT: Jack of all trades, master of none." Information Fusion (2023): 101861.</span>
 
 ## Metadata
+Tags: poleval-2024, information-retrieval
 
-Tags: poleval-2024,
 
-<span id="ref-2">2. Kocoń, Jan, et al. "ChatGPT: Jack of all trades, master of none." Information Fusion (2023): 101861.</span>
