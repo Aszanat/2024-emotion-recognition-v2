@@ -63,16 +63,46 @@ and the review as a whole, starting from "Była to pierwsza wizyta ale moze i os
 The final evaluation metric used is the arithmetic mean of two F1 macro scores. One of which is calculated on only the text annotations, and the other is calculated on only the sentence annotations.
 
 
-$$ Final\:score = \frac{F1_{macro}\:sentences + F1_{macro}\:texts}{2}$$
-where each $F1_{macro}$ is calculated by:
-$$ F1_{macro} = \frac{\sum_{i=1}^n F1_i}{n} $$
-Where n is the number of labels, and F1 for each label is given by the equation:
-$$ F1 = 2\frac{precision*recall}{precision + recall}$$
-The metric is only properly defined when $precision + recall \neq 0$. If this case is encountered, the calculated metric for that label will be set to 0.
-$$ precision = \frac{TP}{TP + FP}$$
-The metric is only properly defined when $TP + FP \neq 0$ where $TP$ and $FP$ represent the number of true positives and false positives, respectively. If this case is encountered, the calculated metric for that label will be set to 0.
-$$ recall = \frac{TP}{TP + FN}$$
-The metric is only properly defined when $TP + FN \neq 0$ where $TP$ and $FN$ represent the number of true positives and false negatives, respectively. If this case is encountered, the calculated metric for that label will be set to 0.
+![ Final\\:score = \\frac{F1\_{macro}\\:sentences +
+F1\_{macro}\\:texts}{2}](http://poleval.pl/task2/media/79d9d4bf1b379227a1ec61dfafe41f5cba29edc6.png " Final\:score = \frac{F1_{macro}\:sentences + F1_{macro}\:texts}{2}") 
+
+where each
+![F1\_{macro}](http://poleval.pl/task2/media/ae0249daacfa3b46ce4c22e5571e0f1e3b0c2fcf.png "F1_{macro}") is calculated by: ![ F1\_{macro} = \\frac{\\sum\_{i=1}\^n
+F1_i}{n}
+](http://poleval.pl/task2/media/be6d6fb86aee4d692c5d62d1a762b8fbd1811a59.png " F1_{macro} = \frac{\sum_{i=1}^n F1_i}{n} ") 
+
+Where n is the number of labels, and F1 for each label is
+given by the equation: 
+
+![ F1 = 2\\frac{precision\*recall}{precision +
+recall}](http://poleval.pl/task2/media/48c194401755dcaf31a93514c00f14a6eccfb9e3.png " F1 = 2\frac{precision*recall}{precision + recall}") 
+
+The metric is only properly defined when ![precision + recall
+\\neq
+0](http://poleval.pl/task2/media/31e06a72e61556dddf76f9eceeeef19eef2b3a07.png "precision + recall \neq 0"). 
+
+If this case is encountered, the calculated metric for that
+label will be set to 0. 
+
+![ precision = \\frac{TP}{TP +
+FP}](http://poleval.pl/task2/media/b7f29f5db619ac494a55f6a892270d6565cca44c.png " precision = \frac{TP}{TP + FP}") 
+
+The metric is only properly defined when ![TP + FP \\neq
+0](http://poleval.pl/task2/media/4fc62a57039eebc02407077564d5c2444fd219ed.png "TP + FP \neq 0") where
+![TP](http://poleval.pl/task2/media/27f3747c7dcbc8854c5e8496f7fab0aae7b5d8e2.png "TP") and
+![FP](http://poleval.pl/task2/media/e30c7d93955743b7be6818905d2bb12bcfae7ccf.png "FP") represent the number of true positives and false positives,
+respectively. If this case is encountered, the calculated metric for
+that label will be set to 0. 
+
+![ recall = \\frac{TP}{TP +
+FN}](http://poleval.pl/task2/media/a06e3d92731f54f610d763ddc16458229aab0122.png " recall = \frac{TP}{TP + FN}") 
+
+The metric is only properly defined when ![TP + FN \\neq
+0](http://poleval.pl/task2/media/a63838df2d3e36ab4d84bbe691023a131003584c.png "TP + FN \neq 0") where
+![TP](http://poleval.pl/task2/media/27f3747c7dcbc8854c5e8496f7fab0aae7b5d8e2.png "TP") and
+![FN](http://poleval.pl/task2/media/7fb811b5d8650f578a2303866db7d4bbd64192c9.png "FN") represent the number of true positives and false negatives,
+respectively. If this case is encountered, the calculated metric for
+that label will be set to 0.
 
 ### Submission format
 The goal of the task is to classify whether an emotion is contained in a text or not. The submission should consist of a single tab-separated file. Each of the eleven columns should contain one boolean value indicating whether a specific emotion is contained or not. Each line should contain annotations relevant to the matching row from the in.tsv file.
