@@ -22,7 +22,7 @@ i jedno wyjście:
 5. Preprocessing 3 - Zamiana ramki z wartościami True i False na izomorficzną tablicę tablic z wartościami 1 i 0 (etykietami).
 6. Adapracja wektoryzującej warstwy z Kerasa (TextVectorization) z pomocą danych wejściowych.
 7. Stworzenie warstwy zanurzenia z Kerasa (Embedding) z pomocą gotowego zbioru wektorów słów ze spaCy.
-8. Budowa sieci neuronowej - wzorowałam się na tej z naszych ćwiczeń **attentionrnn**, ale musiałam jakoś poradzić sobie z podwójnym wejściem oraz 11 wyjściami odpowiadającymi zerom i jedynkom etykiet.Funkcją straty jest _binary cross entropy_ bo wyczytałam gdzieś, że nadaje się do klasyfikacji wieloetykietowej. Z kodem w tym miejscu pomógł mi ChatGPT, ponieważ nie poradziłam sobie z samodzielnym zrozumieniem, od czego zależy kształt wektorów wejściowych i wyjściowych przetwarzanych przez sieć.
+8. Budowa sieci neuronowej - wzorowałam się na tej z naszych ćwiczeń **attentionrnn**, ale musiałam jakoś poradzić sobie z podwójnym wejściem oraz 11 wyjściami odpowiadającymi zerom i jedynkom etykiet.Funkcją straty jest _binary cross entropy_ bo wyczytałam gdzieś, że nadaje się do klasyfikacji wieloetykietowej. Z kodem w tym miejscu pomógł mi Chat GPT, ponieważ nie poradziłam sobie z samodzielnym zrozumieniem, od czego zależy kształt wektorów wejściowych i wyjściowych przetwarzanych przez sieć.
 9. Tworzenie projektu do logów w wandb.
 10. Trening modelu.
 
@@ -34,7 +34,7 @@ Nie sprawdzałam, jak model radzi sobie dla danych innych niż treningowe, ponie
 
 ## HerBERT model
 
-Po absolutnej porażce z Kerasem koleżanka z zajęć podpowiedziała mi, że można przecież dotrenować istniejący model, zamiast tworzyć własny. Przy pisaniu tej wersji ChatGPT pomagał mi jeszcze bardziej niż przy Kerasie, bo miałam już mało czasu na zrozumienie, co dokładnie powinnam zrobić. Tym razem wejście było jedno:
+Po absolutnej porażce z Kerasem koleżanka z zajęć podpowiedziała mi, że można przecież dotrenować istniejący model, zamiast tworzyć własny. Przy pisaniu tej wersji Chat GPT pomagał mi jeszcze bardziej niż przy Kerasie, bo miałam już mało czasu na zrozumienie, co dokładnie powinnam zrobić. Tym razem wejście było jedno:
 
 - tablica zawierająca: treść opinii + treść zdania do ewaluacji, jako jeden string
 
@@ -58,4 +58,21 @@ Dane podzieliłam w proporcji 4:1, 4 dla treningu, 1 dla walidacji.
 10. Tworzenie projektu do logów w wandb.
 11. Trening modelu i logowanie.
 
-Niestety, przy treningu tego modelu Google Colab odebrał mi dostęp do GPU (już na moim drugim oncie, na pierwszym się skończyło jeszcze przy treningu Kerasa), więc nie wiem, czy dożyję końca tego treningu. Wyniki wstawię, kiedy (jeśli) się pojawią.
+Niestety, przy treningu tego modelu Google Colab odebrał mi dostęp do GPU (już na moim drugim koncie, na pierwszym się skończyło jeszcze przy treningu Kerasa), więc mam tylko dwa wyniki:
+
+![herbert_accuracy](herbert_accuracy.png)
+Zielony: 0.9042
+Czerwony: 0.9056
+
+![herbert_loss](herbert_loss.png)
+Zielony: 0.2451
+Czerwony: 0.2431
+
+Z racji ograniczeń google collaba, nie zanosi się, żebym była w stanie wytrenować ten model więcej razy, ani też wygenerować cokolwik dla faktycznych danych testowych.
+
+## Podsumowanie
+
+- Keras: szybszy w treningu, ale absolutnie nieskuteczny przy moim podejściu
+- HerBERT: trening trwa wieki, ale za to ma wybitną skuteczność
+
+Dziękuję za czas poświęcony na przeanalizowanie mojego projektu, mam nadzieję, że mimo pierwszych tragicznych wyników oraz, połowicznie, składania modeli z "puzzli" od chatu GPT (wiedziałam _co_ chcę zrobić, po części nie wiedziałam _jak_...), nie będę musiała zajmować Pańskiego czasu w drugim terminie ^^'
